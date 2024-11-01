@@ -1,4 +1,4 @@
-# AI-course_midterm_project
+#[AI-course_midterm_project]
 This is the midterm assignment for the AI Design and Application course. Requirements: Train a language model. Choose your own dataset, model architecture, and training method; there are no restrictions on size or languages.
 ##[Code Foundation]
 The main code of this project is based on https://github.com/karpathy/nanoGPT. On this basis, the datasets have been changed, and the model structure and parameters have been adjusted. The main modifications are as follows:
