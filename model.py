@@ -168,7 +168,7 @@ class GPTConfig:
     n_layer: int = 16  
     n_head: int = 16  
     n_embd: int = 1024  
-    dropout: float = 0.1 
+    dropout: float = 0.2
     bias: bool = True
 
 class GPT(nn.Module):
