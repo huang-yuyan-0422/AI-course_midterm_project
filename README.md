@@ -1,20 +1,36 @@
-#[AI-course_midterm_project]
-This is the midterm assignment for the AI Design and Application course. Requirements: Train a language model. Choose your own dataset, model architecture, and training method; there are no restrictions on size or languages.
-##[Code Foundation]
-The main code of this project is based on https://github.com/karpathy/nanoGPT. On this basis, the datasets have been changed, and the model structure and parameters have been adjusted. The main modifications are as follows:
-###[Setting Enhanced_tokenizer]
-The tokenizer_utils.py file defines a class named EnhancedTokenizer, which uses the tiktoken library to obtain the GPT-2 encoder and adds special character handling to support more complex text.
-###[Enhancement of Model Structure]
-In the model.py file, the CausalSelfAttention class has added relative position encoding, attention temperature parameters, and gating mechanisms to enhance the model's attention mechanism. The MLP class uses a combination of GELU and ReLU activation functions, introduces learnable residual connection weights, and adds a scaling factor for residual connections in the Block class.
-###[Parameter Adjustments]
-After changing the dataset, the parameters have been mainly adjusted to increase n_layer, n_embd, learning_rate, and added dropout to improve the model's capacity and regularization ability.
-###[Enhancement of Generation Function]
-In the generate method of the GPT class, top-k and top-p sampling strategies have been added to support more flexible text generation.
+# AI-course_midterm_project
 
-##[Run Results]
-During the training process, the generated training and validation loss graphs are shown below. The val_loss decreases as the training steps increase, and no overfitting has occurred.
-![alt]("C:\Users\Cecilia\Desktop\nanoGPT\figures\下载 (1).png" "val_loss~steps")
+This is the midterm assignment for the AI Design and Application course. Requirements: Train a language model. Choose your own dataset, model architecture, and training method; there are no restrictions on size or languages.
+
+## Code Foundation
+
+The main code of this project is based on [nanoGPT](https://github.com/karpathy/nanoGPT). On this basis, the datasets have been changed, and the model structure and parameters have been adjusted. The main modifications are as follows:
+
+### Setting Enhanced_tokenizer
+
+The `tokenizer_utils.py` file defines a class named `EnhancedTokenizer`, which uses the tiktoken library to obtain the GPT-2 encoder and adds special character handling to support more complex text.
+
+### Enhancement of Model Structure
+
+In the `model.py` file, the `CausalSelfAttention` class has added relative position encoding, attention temperature parameters, and gating mechanisms to enhance the model's attention mechanism. The `MLP` class uses a combination of GELU and ReLU activation functions, introduces learnable residual connection weights, and adds a scaling factor for residual connections in the `Block` class.
+
+### Parameter Adjustments
+
+After changing the dataset, the parameters have been mainly adjusted to increase `n_layer`, `n_embd`, `learning_rate`, and added dropout to improve the model's capacity and regularization ability.
+
+### Enhancement of Generation Function
+
+In the `generate` method of the `GPT` class, top-k and top-p sampling strategies have been added to support more flexible text generation.
+
+## Run Results
+
+During the training process, the generated training and validation loss graphs are shown below. The `val_loss` decreases as the training steps increase, and no overfitting has occurred.
+
+![val_loss~steps](C:\Users\Cecilia\Desktop\nanoGPT\figures\下载 (1).png)
+
 A portion of the generated text is displayed as follows:
+
+
 '''
 "I wish so much him to go a man, not all you may be be so sometimes.  "
 
