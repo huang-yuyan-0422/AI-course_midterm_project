@@ -60,11 +60,11 @@ gradient_accumulation_steps = 4 * 8  # used to simulate larger batch sizes
 batch_size = 16  # if gradient_accumulation_steps > 1, this is the micro-batch size
 block_size = 1024
 # model
-n_layer = 8
-n_head = 8
-n_embd = 512
+n_layer = 16
+n_head = 16
+n_embd = 1024
 dropout = 0.2  # for pretraining 0 is good, for finetuning try 0.1+
-bias = False  # do we use bias inside LayerNorm and Linear layers?
+bias = True  # do we use bias inside LayerNorm and Linear layers?
 # adamw optimizer
 learning_rate = 6e-4  # Modify learning rate
 max_iters = 600000  # total number of training iterations
