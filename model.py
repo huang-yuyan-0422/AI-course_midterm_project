@@ -106,8 +106,8 @@ class MLP(nn.Module):
         # Use moderate expansion factor to balance model capacity and overfitting
         hidden_dim = int(1.2 * config.n_embd)
         
-        self.c_fc1   = nn.Linear(config.n_embd, hidden_dim, bias=False)  
-        self.c_fc2   = nn.Linear(hidden_dim, config.n_embd, bias=False)
+        self.c_fc1   = nn.Linear(config.n_embd, hidden_dim, bias=config.bias)  
+        self.c_fc2   = nn.Linear(hidden_dim, config.n_embd, bias=config.bias)
         
         # Use moderate dropout
         self.dropout1 = nn.Dropout(0.2) 
@@ -117,8 +117,8 @@ class MLP(nn.Module):
         self.gelu = nn.GELU()
         self.relu = nn.ReLU()
         
-        self.ln1 = LayerNorm(hidden_dim, bias=False)
-        self.ln2 = LayerNorm(config.n_embd, bias=False)
+        self.ln1 = LayerNorm(hidden_dim, bias=config.bias)
+        self.ln2 = LayerNorm(config.n_embd, bias=config.bias)
         
         # Learnable residual connection weight
         self.res_weight = nn.Parameter(torch.ones(1) * 0.8)
@@ -145,9 +145,9 @@ class MLP(nn.Module):
 class Block(nn.Module):
     def __init__(self, config):
         super().__init__()
-        self.ln_1 = LayerNorm(config.n_embd, bias=False)
+        self.ln_1 = LayerNorm(config.n_embd, bias=config.bias)
         self.attn = CausalSelfAttention(config)
-        self.ln_2 = LayerNorm(config.n_embd, bias=False)
+        self.ln_2 = LayerNorm(config.n_embd, bias=config.bias)
         self.mlp = MLP(config)
         
         # Add scaling factor for residual connections
@@ -184,7 +184,7 @@ class GPT(nn.Module):
             wpe = nn.Embedding(config.block_size, config.n_embd),
             drop = nn.Dropout(config.dropout),
             h = nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
-            ln_f = LayerNorm(config.n_embd, bias=False),
+            ln_f = LayerNorm(config.n_embd, bias=config.bias),
         ))
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
         # with weight tying when using torch.compile() some warnings get generated:
