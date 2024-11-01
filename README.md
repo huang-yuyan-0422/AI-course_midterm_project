@@ -49,6 +49,6 @@ know what we shall be think the sea of home, sir.  And I shouldn't go to
 stay the short, and Jessie had to think it was done.  I'm not been to make
 up the storm of business.
 ---------------
-'''
+
 
 There are still grammatical and spelling errors in the generated text. Future optimization directions include: replacing with a more suitable tokenizer, selecting a larger dataset, and optimizing encoding and decoding strategies (such as punctuation, casing, etc.).
