@@ -27,7 +27,7 @@ In the `generate` method of the `GPT` class, top-k and top-p sampling strategies
 
 During the training process, the generated training and validation loss graphs are shown below. The `val_loss` decreases as the training steps increase, and no overfitting has occurred.
 
-![val_loss](C:\Users\Cecilia\Desktop\nanoGPT\figures\val_loss.png)
+![val_loss](val_loss.png)
 
 A portion of the generated text is displayed as follows:
 
