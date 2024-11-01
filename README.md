@@ -26,12 +26,12 @@ In the `generate` method of the `GPT` class, top-k and top-p sampling strategies
 
 During the training process, the generated training and validation loss graphs are shown below. The `val_loss` decreases as the training steps increase, and no overfitting has occurred.
 
-![val_loss~steps](C:\Users\Cecilia\Desktop\nanoGPT\figures\下载 (1).png)
+![val_loss~steps](C:\Users\Cecilia\Desktop\nanoGPT\figures\val_loss.png)
 
 A portion of the generated text is displayed as follows:
 
 
-'''
+```python
 "I wish so much him to go a man, not all you may be be so sometimes.  "
 
 "The doctor wouldn't be likely could be a lifeboat was work that she was no
@@ -49,6 +49,6 @@ know what we shall be think the sea of home, sir.  And I shouldn't go to
 stay the short, and Jessie had to think it was done.  I'm not been to make
 up the storm of business.
 ---------------
-
+```
 
 There are still grammatical and spelling errors in the generated text. Future optimization directions include: replacing with a more suitable tokenizer, selecting a larger dataset, and optimizing encoding and decoding strategies (such as punctuation, casing, etc.).
