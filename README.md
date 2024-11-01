@@ -32,7 +32,7 @@ During the training process, the generated training and validation loss graphs a
 A portion of the generated text is displayed as follows:
 
 
-```python
+```txt
 "I wish so much him to go a man, not all you may be be so sometimes.  "
 
 "The doctor wouldn't be likely could be a lifeboat was work that she was no
